@@ -289,7 +289,7 @@ export function AppLayout() {
   );
 
   return (
-    <div className="h-screen flex bg-[var(--bg)] overflow-hidden">
+    <div className="h-dvh flex bg-[var(--bg)] overflow-hidden">
       {/* Desktop sidebar */}
       <aside className="w-60 shrink-0 hidden md:flex flex-col border-r border-app bg-[var(--surface)]">
         {sidebarContent}
@@ -320,7 +320,7 @@ export function AppLayout() {
             className="flex items-center rounded-lg px-1.5 py-1 hover:surface-2 transition-colors shrink-0"
             title="Back to company overview"
           >
-            <Logo size="sm" showWordmark={true} />
+            <Logo size="sm" showWordmark={true} wordmarkClassName="hidden sm:inline" />
           </button>
           <button
             onClick={() => setPaletteOpen(true)}

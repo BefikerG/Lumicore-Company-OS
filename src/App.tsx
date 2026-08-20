@@ -33,7 +33,7 @@ function AppRoutes() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--bg)]">
+      <div className="min-h-dvh flex items-center justify-center bg-[var(--bg)]">
         <div className="font-display font-bold text-lg text-[var(--text)]">Lumicore<span className="accent">.</span></div>
       </div>
     );

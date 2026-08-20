@@ -336,7 +336,7 @@ function SprintEditor({
           <label className="block text-xs font-medium text-muted mb-1.5">Goal</label>
           <Textarea rows={2} value={goal} onChange={(e) => setGoal(e.target.value)} placeholder="What's the goal of this sprint?" />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-medium text-muted mb-1.5">Start date</label>
             <Input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />

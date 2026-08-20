@@ -365,7 +365,7 @@ function CalendarView({
   return (
     <div className="space-y-4">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-xl font-display font-bold text-[var(--text)]">{monthName}</h2>
           <p className="text-xs text-muted mt-0.5">
@@ -395,9 +395,9 @@ function CalendarView({
       </div>
 
       {/* Grid */}
-      <div className="rounded-2xl surface overflow-hidden shadow-soft">
+      <div className="rounded-2xl surface shadow-soft overflow-x-auto">
         {/* Weekday headers */}
-        <div className="grid grid-cols-7 border-b border-app">
+        <div className="grid grid-cols-7 border-b border-app min-w-[720px]">
           {weekdays.map((w) => (
             <div key={w} className="py-3 text-center text-[11px] font-bold text-muted uppercase tracking-widest">
               {w}
@@ -406,7 +406,7 @@ function CalendarView({
         </div>
 
         {/* Day cells */}
-        <div className="grid grid-cols-7 divide-x divide-y divide-app">
+        <div className="grid grid-cols-7 divide-x divide-y divide-app min-w-[720px]">
           {days.map((date, i) => {
             if (!date) {
               return <div key={`empty-${i}`} className="min-h-[120px] surface-2 opacity-40" />;
@@ -670,7 +670,7 @@ function TaskEditor({
           <label className="block text-xs font-medium text-muted mb-1.5">Description</label>
           <Textarea rows={3} value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Add details…" />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-medium text-muted mb-1.5">Status</label>
             <Select value={status} onChange={(e) => setStatus(e.target.value as Task['status'])}>

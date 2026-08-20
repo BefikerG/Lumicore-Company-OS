@@ -69,7 +69,7 @@ export default function EquityPage() {
         {/* Table */}
         <Card className="overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full min-w-[860px] text-sm">
               <thead>
                 <tr className="border-b border-app text-left text-xs text-muted">
                   <th className="px-4 py-3 font-medium">Holder</th>
@@ -311,7 +311,7 @@ function HoldingEditor({ holding, onClose, onSaved }:
           <label className="block text-xs font-medium text-muted mb-1.5">Holder name</label>
           <Input value={holderName} onChange={(e) => setHolderName(e.target.value)} placeholder="Jane Doe" autoFocus />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-medium text-muted mb-1.5">Shares</label>
             <Input type="number" value={shares} onChange={(e) => setShares(e.target.value)} placeholder="100000" />

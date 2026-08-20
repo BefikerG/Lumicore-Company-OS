@@ -202,7 +202,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4 bg-black/30 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-[8vh] sm:pt-[15vh] px-4 bg-black/30 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
     >
       <div
@@ -220,7 +220,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
           />
           <kbd className="text-[10px] text-muted surface-2 rounded px-1.5 py-0.5">ESC</kbd>
         </div>
-        <div className="max-h-[50vh] overflow-y-auto py-2">
+        <div className="max-h-[55dvh] overflow-y-auto overscroll-contain py-2">
           {flat.length === 0 && (
             <div className="px-4 py-8 text-center text-sm text-muted">No results found</div>
           )}

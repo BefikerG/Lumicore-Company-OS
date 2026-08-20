@@ -168,7 +168,7 @@ function KbCreator({ product, currentUserId, onClose, onCreated }: { product: { 
     <Modal open onClose={onClose} title="New Knowledge Base Entry" className="max-w-xl">
       <div className="p-5 space-y-4">
         <div><label className="block text-xs font-medium text-muted mb-1.5">Title</label><Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Interview notes, book summary, etc." autoFocus /></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Category</label><Select value={category} onChange={(e) => setCategory(e.target.value as KbEntry['category'])}>{CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.label}</option>)}</Select></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Tags (comma-separated)</label><Input value={tags} onChange={(e) => setTags(e.target.value)} placeholder="research, q3, customer" /></div>
         </div>

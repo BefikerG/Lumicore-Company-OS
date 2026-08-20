@@ -404,7 +404,7 @@ function IncomeTab({ income, products, currency, isFounder, onEdit, onNew }:
             description={isFounder ? 'Add revenue, grants, or investment entries.' : 'Income will appear here.'} /></Card>
         : <Card className="overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full min-w-[680px] text-sm">
               <thead><tr className="border-b border-app text-left text-xs text-muted">
                 <th className="px-4 py-3 font-medium">Description</th>
                 <th className="px-4 py-3 font-medium">Category</th>
@@ -527,7 +527,7 @@ function BankTab({ balances, currency, isFounder, onEdit, onNew }:
             description={isFounder ? 'Record your current balance to track runway.' : 'No bank data available.'} /></Card>
         : <Card className="overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full min-w-[680px] text-sm">
               <thead><tr className="border-b border-app text-left text-xs text-muted">
                 <th className="px-4 py-3 font-medium">Account</th>
                 <th className="px-4 py-3 font-medium text-right">Balance</th>
@@ -602,7 +602,7 @@ function ExpenseEditor({ expense, products, currentUserId, onClose, onSaved }:
       <div className="p-5 space-y-4">
         <div><label className="block text-xs font-medium text-muted mb-1.5">Description</label>
           <Input value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Office rent, AWS…" autoFocus /></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Category</label>
             <Select value={category} onChange={(e) => setCategory(e.target.value as Expense['category'])}>
               {EXP_CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.label}</option>)}
@@ -613,7 +613,7 @@ function ExpenseEditor({ expense, products, currentUserId, onClose, onSaved }:
               {products.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
             </Select></div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Amount (USD)</label>
             <Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="1500" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Date</label>
@@ -676,7 +676,7 @@ function IncomeEditor({ income, products, currentUserId, onClose, onSaved }:
       <div className="p-5 space-y-4">
         <div><label className="block text-xs font-medium text-muted mb-1.5">Description</label>
           <Input value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Client payment, grant…" autoFocus /></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Category</label>
             <Select value={category} onChange={(e) => setCategory(e.target.value as Income['category'])}>
               {INC_CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.label}</option>)}
@@ -687,7 +687,7 @@ function IncomeEditor({ income, products, currentUserId, onClose, onSaved }:
               {products.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
             </Select></div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Amount (USD)</label>
             <Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="5000" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Date</label>
@@ -747,7 +747,7 @@ function BankEditor({ balance, currentUserId, onClose, onSaved }:
       <div className="p-5 space-y-4">
         <div><label className="block text-xs font-medium text-muted mb-1.5">Account name</label>
           <Input value={accountName} onChange={(e) => setAccountName(e.target.value)} placeholder="Main Account" autoFocus /></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Balance (USD)</label>
             <Input type="number" value={balanceUsd} onChange={(e) => setBalanceUsd(e.target.value)} placeholder="50000" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Date</label>
@@ -797,7 +797,7 @@ function SalaryEditor({ salary, profiles, currentUserId, onClose, onSaved }:
             <option value="">Select employee…</option>
             {profiles.map((p) => <option key={p.id} value={p.id}>{p.full_name} — {p.title || p.role}</option>)}
           </Select></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Monthly salary (USD)</label>
             <Input type="number" value={monthlyUsd} onChange={(e) => setMonthlyUsd(e.target.value)} placeholder="3000" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Effective date</label>

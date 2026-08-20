@@ -189,22 +189,24 @@ export function Modal({
   if (!open) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-[12vh] bg-black/30 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-black/30 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
     >
-      <div
-        className={cn(
-          'w-full max-w-lg rounded-2xl surface shadow-soft-lg animate-scale-in',
-          className
-        )}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {title && (
-          <div className="px-5 py-4 border-b border-app">
-            <h3 className="font-semibold text-base">{title}</h3>
-          </div>
-        )}
-        {children}
+      <div className="flex min-h-full items-start justify-center p-4 pt-[6vh] pb-[max(1rem,env(safe-area-inset-bottom))] sm:pt-[12vh]">
+        <div
+          className={cn(
+            'w-full max-w-lg rounded-2xl surface shadow-soft-lg animate-scale-in',
+            className
+          )}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {title && (
+            <div className="px-5 py-4 border-b border-app">
+              <h3 className="font-semibold text-base">{title}</h3>
+            </div>
+          )}
+          {children}
+        </div>
       </div>
     </div>
   );

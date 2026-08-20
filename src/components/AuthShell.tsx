@@ -5,9 +5,11 @@ import { cn } from '@/lib/utils';
 export function Logo({
   size = 'md',
   showWordmark = true,
+  wordmarkClassName,
 }: {
   size?: 'sm' | 'md' | 'lg';
   showWordmark?: boolean;
+  wordmarkClassName?: string;
 }) {
   const sizes = {
     sm: { dot: 'w-2 h-2', text: 'text-base' },
@@ -16,7 +18,7 @@ export function Logo({
   };
   return (
     <div className="flex items-center gap-1.5 font-display font-bold tracking-tight text-[var(--text)]">
-      {showWordmark && <span className={sizes[size].text}>Lumicore</span>}
+      {showWordmark && <span className={cn(sizes[size].text, wordmarkClassName)}>Lumicore</span>}
       <span className={`${sizes[size].dot} rounded-full accent-bg shrink-0`} />
     </div>
   );
@@ -62,7 +64,7 @@ export function AuthShell({
   themeToggle?: boolean;
 }) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-[var(--bg)]">
+    <div className="min-h-dvh flex flex-col items-center justify-center p-6 bg-[var(--bg)]">
       {themeToggle && <AuthThemeToggle />}
       <div className="w-full max-w-sm">
         <div className="mb-8 flex justify-center">

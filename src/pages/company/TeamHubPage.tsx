@@ -219,12 +219,12 @@ function MemberEditor({ member, defaultRole, onClose, onSaved }: {
             This creates a login they can use immediately. Share the email and password with them.
           </p>
         )}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Full name</label><Input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Jane Doe" autoFocus /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Email</label><Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jane@lumicore.com" disabled={!!member} /></div>
         </div>
         {creating && (
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-medium text-muted mb-1.5">Password</label>
               <div className="relative">
@@ -241,11 +241,11 @@ function MemberEditor({ member, defaultRole, onClose, onSaved }: {
             </div>
           </div>
         )}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Title / Role</label><Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="CEO, CTO, Engineer…" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Role type</label><Select value={role} onChange={(e) => setRole(e.target.value as Profile['role'])}>{ROLE_OPTIONS.map((r) => <option key={r.key} value={r.key}>{r.label}</option>)}</Select></div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Phone</label><Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+251…" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Department</label><Input value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Engineering, Product…" /></div>
         </div>

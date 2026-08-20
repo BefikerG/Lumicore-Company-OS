@@ -138,7 +138,7 @@ function DocCreator({ product, currentUserId, onClose, onCreated }: { product: {
     <Modal open onClose={onClose} title="New Doc" className="max-w-xl">
       <div className="p-5 space-y-4">
         <div><label className="block text-xs font-medium text-muted mb-1.5">Title</label><Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="PRD, Meeting Notes, etc." autoFocus /></div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Folder (optional)</label><Input value={folder} onChange={(e) => setFolder(e.target.value)} placeholder="Engineering, Product…" /></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Tags (comma-separated)</label><Input value={tags} onChange={(e) => setTags(e.target.value)} placeholder="spec, v1, draft" /></div>
         </div>

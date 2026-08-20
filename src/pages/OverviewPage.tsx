@@ -229,7 +229,7 @@ function ProductEditor({ product, onClose, onSaved }: { product: Product | null;
           </div>
           <p className="text-xs text-muted mt-1">Selected: <span className="font-mono">{color}</span></p>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div><label className="block text-xs font-medium text-muted mb-1.5">Phase</label><Select value={phase} onChange={(e) => setPhase(e.target.value as Product['phase'])}>{PHASES.map((p) => <option key={p.key} value={p.key}>{p.label}</option>)}</Select></div>
           <div><label className="block text-xs font-medium text-muted mb-1.5">Status</label><Select value={status} onChange={(e) => setStatus(e.target.value as Product['status'])}><option value="active">Active</option><option value="paused">Paused</option><option value="archived">Archived</option></Select></div>
         </div>

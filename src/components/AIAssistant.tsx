@@ -90,14 +90,14 @@ export function AIAssistant() {
 
   if (!open) {
     return (
-      <button onClick={() => setOpen(true)} className="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full accent-bg text-white shadow-soft-lg flex items-center justify-center hover:scale-105 transition-transform" title="AI Assistant">
+      <button onClick={() => setOpen(true)} className="fixed right-5 bottom-[max(1.25rem,env(safe-area-inset-bottom))] z-40 w-12 h-12 rounded-full accent-bg text-white shadow-soft-lg flex items-center justify-center hover:scale-105 transition-transform" title="AI Assistant">
         <Sparkles className="w-5 h-5" />
       </button>
     );
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 w-[380px] max-w-[calc(100vw-2.5rem)] h-[520px] max-h-[calc(100vh-3rem)] rounded-2xl surface shadow-soft-lg flex flex-col overflow-hidden">
+    <div className="fixed z-40 inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] h-[70dvh] sm:inset-x-auto sm:right-5 sm:bottom-5 sm:w-[380px] sm:h-[520px] sm:max-h-[calc(100dvh-3rem)] rounded-2xl surface shadow-soft-lg flex flex-col overflow-hidden">
       <div className="px-4 py-3 border-b border-app flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg accent-bg flex items-center justify-center"><Sparkles className="w-4 h-4 text-white" /></div>

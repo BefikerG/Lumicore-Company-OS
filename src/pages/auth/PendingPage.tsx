@@ -14,7 +14,7 @@ export default function PendingPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 bg-[var(--bg)]">
+    <div className="min-h-dvh flex items-center justify-center p-6 bg-[var(--bg)]">
       <div className="w-full max-w-sm text-center">
         <div className="mb-6 flex justify-center">
           <Logo size="md" />

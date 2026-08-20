@@ -342,7 +342,7 @@ function EntryEditor({
           <label className="block text-xs font-medium text-muted mb-1.5">Description</label>
           <Textarea rows={2} value={description} onChange={(e) => setDescription(e.target.value)} placeholder="What does it do / why chosen?" />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-medium text-muted mb-1.5">Cost type</label>
             <Select value={costType} onChange={(e) => setCostType(e.target.value as TechStackEntry['cost_type'])}>
@@ -358,7 +358,7 @@ function EntryEditor({
             <Input type="number" value={monthlyCost} onChange={(e) => setMonthlyCost(e.target.value)} placeholder="0" disabled={costType === 'free'} />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-medium text-muted mb-1.5">Per-user cost ($)</label>
             <Input type="number" value={perUserCost} onChange={(e) => setPerUserCost(e.target.value)} placeholder="0" disabled={costType !== 'per_user'} />

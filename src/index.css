@@ -43,11 +43,16 @@
   * {
     border-color: var(--border);
   }
+  html {
+    /* Stop Safari inflating text when a phone is rotated to landscape. */
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
@@ -112,6 +117,24 @@
 .md blockquote { border-left: 3px solid var(--accent); padding-left: 0.75rem; color: var(--text-muted); margin: 0.5rem 0; }
 .md a { color: var(--accent); text-decoration: underline; }
 .md hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+/* Unlayered so it outranks Tailwind's text-* utilities.
+   iOS Safari zooms the whole page when focusing a control under 16px and
+   never zooms back out, which strands the layout off-screen. */
+@media (max-width: 640px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='color']):not([type='range']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.mb-safe {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }

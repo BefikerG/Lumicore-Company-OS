@@ -486,8 +486,8 @@ export default function ChatPage() {
     <PageContainer title="Chat" actions={isFounder && (
       <Button size="sm" onClick={() => setCreating(true)}><Plus className="w-4 h-4" /> New Channel</Button>
     )}>
-      <div className="grid lg:grid-cols-[220px_1fr] gap-4 h-[72vh]">
-        <div className="flex flex-col gap-3 overflow-y-auto">
+      <div className="grid lg:grid-cols-[220px_1fr] gap-4 lg:h-[72vh]">
+        <div className="flex flex-col gap-3 lg:overflow-y-auto">
           {productMembers.length > 0 && (
             <div className="surface rounded-xl p-3">
               <div className="text-[10px] font-semibold text-muted uppercase tracking-wider mb-2">Team ({productMembers.length})</div>
@@ -567,7 +567,7 @@ export default function ChatPage() {
         </div>
 
         <div
-          className="surface rounded-xl flex flex-col overflow-hidden"
+          className="surface rounded-xl flex flex-col overflow-hidden h-[68dvh] lg:h-auto"
           onDragOver={(e) => { e.preventDefault(); }}
           onDrop={(e) => {
             e.preventDefault();
